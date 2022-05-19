@@ -3,10 +3,14 @@ import javax.swing.*;
 import java.awt.*;
 
 public class gui {
-    JFrame app;
-    JLabel students_lbl,attendance_lbl;
+    JFrame app,signIn,signUp;
+    JLabel students_lbl,attendance_lbl,subject_attendance_lbl,signIn_lbl,username_signIn_lbl,username_signUp_lbl,password_signIn_lbl,password_signUp_lbl,signUp_signUp_lbl;
+    JTextField username_signIn_txt,username_signUp_txt;
+    JPasswordField password_signIn_txt,password_signUp_txt;
     JCheckBox  c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,c31,c32;
-    JButton exit_btn,submit_btn;
+    JButton exit_btn,submit_btn,signIn_btn,signUp_btn,back_signUp_btn,signUp_signUp_btn,Signout_attendance_btn;
+    JRadioButton sw_btn,advancedCpp_btn,algo_btn,networkProgramming_btn,android_btn,embedded_btn;
+    ButtonGroup subjectSelect_btn;
 
 
     gui(){
@@ -15,8 +19,104 @@ public class gui {
         app=new JFrame("Attendance-Application");
         app.setLayout(null);
         app.setResizable(false);
-        app.setSize(800,760);
+        app.setSize(800,1000);
         app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        signIn=new JFrame("SignIn");
+        signIn.setLayout(null);
+        signIn.setResizable(false);
+        signIn.setSize(620,520);
+        signIn.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        signUp=new JFrame("SignUp");
+        signUp.setLayout(null);
+        signUp.setResizable(false);
+        signUp.setSize(620,520);
+        signUp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+
+
+
+        //creating signIn components:-
+        signIn_lbl=new JLabel("SignIn :-");
+        signIn_lbl.setFont(new Font("segueUI",Font.BOLD,25));
+        signIn_lbl.setBounds(30,20,100,30);
+
+        username_signIn_lbl=new JLabel("Username :");
+        username_signIn_lbl.setFont(new Font("segueUI",Font.BOLD,14));
+        username_signIn_lbl.setBounds(50,120,120,30);
+
+        username_signIn_txt=new JTextField();
+        username_signIn_txt.setFont(new Font("segueUI",Font.BOLD,16));
+        username_signIn_txt.setBounds(180,120,280,30);
+
+        password_signIn_lbl=new JLabel("Password :");
+        password_signIn_lbl.setFont(new Font("segueUI",Font.BOLD,14));
+        password_signIn_lbl.setBounds(50,180,120,30);
+
+        password_signIn_txt=new JPasswordField();
+        password_signIn_txt.setFont(new Font("segueUI",Font.BOLD,16));
+        password_signIn_txt.setBounds(180,180,280,30);
+
+        signIn_btn=new JButton("LogIn");
+        signIn_btn.setFont(new Font("segueUI",Font.PLAIN,18));
+        signIn_btn.setBounds(250,275,120,50);
+
+        signUp_btn=new JButton("SignUp");
+        signUp_btn.setFont(new Font("segueUI",Font.PLAIN,18));
+        signUp_btn.setBounds(250,360,120,50);
+
+
+        //adding signIn components:-
+        signIn.add(signIn_lbl);
+        signIn.add(username_signIn_lbl);
+        signIn.add(username_signIn_txt);
+        signIn.add(password_signIn_lbl);
+        signIn.add(password_signIn_txt);
+        signIn.add(signIn_btn);
+        signIn.add(signUp_btn);
+
+
+
+        //Creating signUp components:-
+        signUp_signUp_lbl=new JLabel("SignUp :-");
+        signUp_signUp_lbl.setFont(new Font("segueUI",Font.BOLD,25));
+        signUp_signUp_lbl.setBounds(30,20,150,30);
+
+        username_signUp_lbl=new JLabel("Username :");
+        username_signUp_lbl.setFont(new Font("segueUI",Font.BOLD,14));
+        username_signUp_lbl.setBounds(50,120,120,30);
+
+        username_signUp_txt=new JTextField();
+        username_signUp_txt.setFont(new Font("segueUI",Font.BOLD,16));
+        username_signUp_txt.setBounds(180,120,280,30);
+
+        password_signUp_lbl=new JLabel("Password :");
+        password_signUp_lbl.setFont(new Font("segueUI",Font.BOLD,14));
+        password_signUp_lbl.setBounds(50,180,120,30);
+
+        password_signUp_txt=new JPasswordField();
+        password_signUp_txt.setFont(new Font("segueUI",Font.BOLD,16));
+        password_signUp_txt.setBounds(180,180,280,30);
+
+        signUp_signUp_btn=new JButton("signUp");
+        signUp_signUp_btn.setFont(new Font("segueUI",Font.PLAIN,18));
+        signUp_signUp_btn.setBounds(250,275,120,50);
+
+        back_signUp_btn=new JButton("back");
+        back_signUp_btn.setFont(new Font("segueUI",Font.PLAIN,18));
+        back_signUp_btn.setBounds(250,360,120,50);
+
+
+        //Adding signIn components:-
+        signUp.add(signUp_signUp_lbl);
+        signUp.add(username_signUp_lbl);
+        signUp.add(username_signUp_txt);
+        signUp.add(password_signUp_lbl);
+        signUp.add(password_signUp_txt);
+        signUp.add(signUp_signUp_btn);
+        signUp.add(back_signUp_btn);
+
 
 
         //defining labels:-
@@ -129,13 +229,45 @@ public class gui {
         c32.setBounds(500,575,200,30);
         c32.setFont(new Font("Verdana", Font.PLAIN, 15));
 
+        subject_attendance_lbl=new JLabel("Subjects :-");
+        subject_attendance_lbl.setFont(new Font("Verdana", Font.BOLD, 16));
+        subject_attendance_lbl.setBounds(30,650,120,30);
 
+        //sw_btn,advancedCpp_btn,algo_btn,networkProgramming_btn,android_btn,embedded_btn;
+        sw_btn=new JRadioButton("Software Engineering");
+        sw_btn.setFont(new Font("Verdana", Font.PLAIN, 15));
+        sw_btn.setBounds(100,700,220,30);
+        advancedCpp_btn=new JRadioButton("Advanced C++");
+        advancedCpp_btn.setFont(new Font("Verdana", Font.PLAIN, 15));
+        advancedCpp_btn.setBounds(340,700,220,30);
+        algo_btn=new JRadioButton("Algorithms");
+        algo_btn.setFont(new Font("Verdana", Font.PLAIN, 15));
+        algo_btn.setBounds(560,700,220,30);
+        networkProgramming_btn=new JRadioButton("Network Programming");
+        networkProgramming_btn.setFont(new Font("Verdana", Font.PLAIN, 15));
+        networkProgramming_btn.setBounds(100,750,220,30);
+        android_btn=new JRadioButton("Mobile Development");
+        android_btn.setFont(new Font("Verdana", Font.PLAIN, 15));
+        android_btn.setBounds(340,750,220,30);
+        embedded_btn=new JRadioButton("Embedded Systems");
+        embedded_btn.setFont(new Font("Verdana", Font.PLAIN, 15));
+        embedded_btn.setBounds(560,750,220,30);
+
+        subjectSelect_btn=new ButtonGroup();
+        subjectSelect_btn.add(sw_btn);
+        subjectSelect_btn.add(advancedCpp_btn);
+        subjectSelect_btn.add(algo_btn);
+        subjectSelect_btn.add(networkProgramming_btn);
+        subjectSelect_btn.add(android_btn);
+        subjectSelect_btn.add(embedded_btn);
 
         //defining the buttons:-
         exit_btn=new JButton("Exit");
-        exit_btn.setBounds(30,650,80,50);
+        exit_btn.setBounds(30,870,80,50);
         submit_btn=new JButton("Submit");
-        submit_btn.setBounds(680,650,80,50);
+        submit_btn.setBounds(680,870,80,50);
+        Signout_attendance_btn=new JButton("Sign-out");
+        Signout_attendance_btn.setBounds(315,870,120,50);
 
 
         //adding elements or components into the frame:-
@@ -173,12 +305,20 @@ public class gui {
         app.add(c30);
         app.add(c31);
         app.add(c32);
+        app.add(Signout_attendance_btn);
         app.add(exit_btn);
         app.add(submit_btn);
+        app.add(subject_attendance_lbl);
+        app.add(sw_btn);
+        app.add(advancedCpp_btn);
+        app.add(algo_btn);
+        app.add(networkProgramming_btn);
+        app.add(android_btn);
+        app.add(embedded_btn);
 
 
         //set the main application frame to be displayed to user:-
-        app.setVisible(true);
+        signIn.setVisible(true);
 
     }
 
