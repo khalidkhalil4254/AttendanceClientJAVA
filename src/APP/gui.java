@@ -38,6 +38,11 @@ public class gui {
 
 
         //creating signIn components:-
+
+        String dep[]={"ICT","Renewable-energy","Mechatronics","Auto"};
+        JComboBox cb=new JComboBox(dep);
+        cb.setBounds(220,260,180,30);
+
         signIn_lbl=new JLabel("SignIn :-");
         signIn_lbl.setFont(new Font("segueUI",Font.BOLD,25));
         signIn_lbl.setBounds(30,20,100,30);
@@ -60,14 +65,15 @@ public class gui {
 
         signIn_btn=new JButton("LogIn");
         signIn_btn.setFont(new Font("segueUI",Font.PLAIN,18));
-        signIn_btn.setBounds(250,275,120,50);
+        signIn_btn.setBounds(320,360,120,50);
 
         signUp_btn=new JButton("SignUp");
         signUp_btn.setFont(new Font("segueUI",Font.PLAIN,18));
-        signUp_btn.setBounds(250,360,120,50);
+        signUp_btn.setBounds(180,360,120,50);
 
 
         //adding signIn components:-
+        signIn.add(cb);
         signIn.add(signIn_lbl);
         signIn.add(username_signIn_lbl);
         signIn.add(username_signIn_txt);
